@@ -21,20 +21,29 @@ export default function Dashboard() {
     const data = await res.json();
     setTasks(Array.isArray(data) ? data : []);
   };
+const addTask = async () => {
+  if (!title.trim()) return;
 
-  const addTask = async () => {
-    if (!title.trim()) return;
-    setLoading(true);
-    await fetch('/api/tasks', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, description }),
-    });
-    setTitle('');
-    setDescription('');
-    setLoading(false);
-    fetchTasks();
-  };
+  setLoading(true);
+
+  await fetch("/api/tasks", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      title,
+      description,
+      userEmail: session.user.email,
+    }),
+  });
+
+  setTitle("");
+  setDescription("");
+  setLoading(false);
+  fetchTasks(); // <-- AICI era problema
+};
+
+
+
 
   const deleteTask = async (id) => {
     await fetch('/api/tasks', {
