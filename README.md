@@ -1,10 +1,9 @@
 # Task Manager
 
-**Nume:** NUMELE TĂU COMPLET
-**Grupă:** GRUPA TA
-**Link video:** https://youtube.com/watch?v=XXXXX
-**Link publicare:** https://cloud-computing-project-xxx.vercel.app
-
+**Nume:** Vartolomei Franceska Ioana
+**Grupă:** 1147
+**Link video:** https://youtu.be/jSBKw-Hr3mo
+**Link publicare:** https://cloude-computing.vercel.app
 ## 1. Introducere
 Task Manager este o aplicație web pentru gestionarea task-urilor personale. 
 Utilizatorii se pot înregistra, autentifica și gestiona task-uri. 
