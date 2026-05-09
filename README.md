@@ -9,6 +9,7 @@ Task Manager este o aplicație web pentru gestionarea task-urilor personale.
 Utilizatorii se pot înregistra, autentifica și gestiona task-uri. 
 La înregistrarea unui task nou utilizatorii primesc un email de task nou adaugat cu numele rask ului prin SendGrid.
 Tehnologii folosite: Next.js, MongoDB Atlas, SendGrid, NextAuth.js, Vercel.
+git add .
 
 ## 2. Descriere problemă
 Aplicația rezolvă problema organizării task-urilor zilnice. 
