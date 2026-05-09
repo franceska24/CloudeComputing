@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Task Manager
 
-## Getting Started
+**Nume:** NUMELE TĂU COMPLET
+**Grupă:** GRUPA TA
+**Link video:** https://youtube.com/watch?v=XXXXX
+**Link publicare:** https://cloud-computing-project-xxx.vercel.app
 
-First, run the development server:
+## 1. Introducere
+Task Manager este o aplicație web pentru gestionarea task-urilor personale. 
+Utilizatorii se pot înregistra, autentifica și gestiona task-uri. 
+La înregistrarea unui task nou utilizatorii primesc un email de task nou adaugat cu numele rask ului prin SendGrid.
+Tehnologii folosite: Next.js, MongoDB Atlas, SendGrid, NextAuth.js, Vercel.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 2. Descriere problemă
+Aplicația rezolvă problema organizării task-urilor zilnice. 
+Utilizatorii pot adăuga task-uri, le pot marca ca finalizate sau șterge. 
+Datele persistă în cloud și sunt accesibile de oriunde.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 3. Descriere API
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Serviciu Cloud 1: MongoDB Atlas
+- Tip: Bază de date NoSQL în cloud
+- Utilizare: Stocarea utilizatorilor și task-urilor
+- Autentificare: Connection string cu username/password
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Serviciu Cloud 2: SendGrid
+- Tip: Serviciu de trimitere email prin API REST
+- Utilizare: Email de inregistrare task nou 
+- Autentificare: API Key
 
-## Learn More
+## 4. Flux de date
 
-To learn more about Next.js, take a look at the following resources:
+### Metode HTTP
+- GET /api/tasks — obține lista de task-uri
+- POST /api/tasks — creează task nou
+- PUT /api/tasks — actualizează task
+- DELETE /api/tasks — șterge task
+- POST /api/auth/[...nextauth] — autentificare
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Exemplu request/response
+POST /api/tasks
+Request: { "title": "Task nou", "description": "Descriere" }
+Response: { "_id": "664abc123", "title": "Task nou", "completed": false }
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Autentificare
+- NextAuth.js cu JWT
+- Parole criptate cu bcryptjs
+- SendGrid cu API Key
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 5. Capturi ecran
+![Aplicatie](./public/screenshots.png)
+## 6. Referințe
+- https://nextjs.org/docs
+- https://www.mongodb.com/atlas
+- https://next-auth.js.org
+- https://sendgrid.com/docs
+- https://vercel.com/docs
