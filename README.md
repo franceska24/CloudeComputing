@@ -2,7 +2,7 @@
 
 **Nume:** Vartolomei Franceska Ioana
 **Grupă:** 1147
-**Link video:** https://youtu.be/jSBKw-Hr3mo
+**Link video:** https://youtu.be/p32Q_ga2ds0
 **Link publicare:** https://cloude-computing.vercel.app
 ## 1. Introducere
 Task Manager este o aplicație web pentru gestionarea task-urilor personale. 
